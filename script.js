@@ -8,8 +8,18 @@ function convertToRoman(num) {
       5:['V', 5], 
       6:['I', 1]
     };
+  let result = '';
+    
+    const romanSymbols = Object.values(obj);
 
-  //your code here
+    for (let [symbol, value] of romanSymbols) {
+        while (num >= value) {
+            result += symbol;
+            num -= value;
+        }
+    }
+    
+    return result;
 
 }
 // You can test your code by running the above function and printing it to console by pressing the run button at the top. To run it with input 36, uncomment the following line
